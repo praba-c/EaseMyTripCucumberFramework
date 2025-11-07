@@ -17,10 +17,10 @@ Feature: Validate Activities Functionalities
     When user selects the "10", "3" and click on book now button
     Then verify user is on user information page
     When user fills the details:
-      | prefix | firstName | lastName |
-      | Mr.    | Steve     | Smith    |
-      | Mr.    | Dwayne    | Johnson  |
-      | Mr.    | Nathan    | Lyon     |
+      | prefix | firstName | lastName   |
+      | Mr.    | Ricky     | Ponting    |
+      | Mr.    | Adam      | Ghilchrist |
+      | Mr.    | Mitchell  | Starc      |
     Then print the price details
 
   Scenario Outline: Verify user can sort activity packages by price

@@ -17,7 +17,7 @@ export class ActivityTravellerInfoPage {
         this.firstNameTab = page.getByPlaceholder('Enter Your First Name');
         this.lastNameTab = page.getByPlaceholder('Enter Your Last Name');
         this.priceDetails = page.locator('._dvsnglfre.flx.jsb.wt700.drkorg.f18');
-        this.titleOptions = page.locator("//div[@class='drp_tmslct f14']//li");
+        this.titleOptions = page.locator(".drp_tmslct.f14 li");
     }
 
     async isActitvityTravelerInfoPageDisplayed() {

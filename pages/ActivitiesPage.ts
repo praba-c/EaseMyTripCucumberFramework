@@ -35,7 +35,7 @@ export class ActivitiesPage {
     async selectPlace(location: string) {
         for (let i = 0; i < await this.availablePlaces.count(); ++i) {
             const name = await this.availablePlaces.nth(i).textContent() || "";
-            console.log('name ', name);
+            //console.log('name ', name);
             if (location === name.toString().trim()) {
                 await this.availablePlaces.nth(i).click();
                 break;

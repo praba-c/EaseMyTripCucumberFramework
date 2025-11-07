@@ -1,4 +1,4 @@
-import { After, Before, setWorldConstructor } from "@cucumber/cucumber";
+import { After, Before, setDefaultTimeout, setWorldConstructor } from "@cucumber/cucumber";
 import { Browser, BrowserContext, chromium, Page } from "playwright"; 
 import { HomePage } from "../pages/HomePage";
 import { ActivitiesPage } from "../pages/ActivitiesPage";
@@ -32,6 +32,7 @@ Before(async function (this: CustomWorld) {
   await this.init();
 });
 
-After(async function (this: CustomWorld) {
+After(async function (this: CustomWorld, scenario) {
+    await this.page.screenshot({path: `${scenario.pickle.name}.png`, fullPage: true})
     await this.browser.close();
-})
+});
