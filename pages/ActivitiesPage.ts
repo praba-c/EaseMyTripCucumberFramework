@@ -84,7 +84,6 @@ export class ActivitiesPage {
 
     async sort(option: string) {
         for (let i = 0; i < await this.sortOptions.count(); ++i) {
-            
             const value = await this.sortOptions.nth(i).textContent() || "";
             if (value.toString().includes(option)) {
                 await this.sortOptions.nth(i).click();

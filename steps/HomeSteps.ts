@@ -1,6 +1,6 @@
 import { Given, When, Then, setDefaultTimeout } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/World";
-import {expect} from "@playwright/test";
+import { expect } from "@playwright/test";
 
 setDefaultTimeout(60000);
 

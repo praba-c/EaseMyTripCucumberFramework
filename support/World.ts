@@ -1,5 +1,5 @@
 import { After, Before, setDefaultTimeout, setWorldConstructor } from "@cucumber/cucumber";
-import { Browser, BrowserContext, chromium, Page } from "playwright"; 
+import { Browser, BrowserContext, chromium, Page } from "playwright";
 import { HomePage } from "../pages/HomePage";
 import { ActivitiesPage } from "../pages/ActivitiesPage";
 import { ActivityDetailsPage } from "../pages/ActivityDetailsPage";
@@ -7,7 +7,7 @@ import { ActivityTravellerInfoPage } from "../pages/ActivityTravellerInfoPage";
 
 export class CustomWorld {
     browser!: Browser;
-    context!: BrowserContext; 
+    context!: BrowserContext;
     page!: Page;
     homePage!: HomePage;
     activitiesPage!: ActivitiesPage;
@@ -15,12 +15,12 @@ export class CustomWorld {
     activityTravellerInfoPage!: ActivityTravellerInfoPage;
 
     async init() {
-        this.browser = await chromium.launch({headless: false});
+        this.browser = await chromium.launch({ headless: false });
         this.context = await this.browser.newContext({
             permissions: []
         });
         this.page = await this.context.newPage();
-        
+
         this.homePage = new HomePage(this.page);
     }
 
@@ -29,10 +29,10 @@ export class CustomWorld {
 setWorldConstructor(CustomWorld);
 
 Before(async function (this: CustomWorld) {
-  await this.init();
+    await this.init();
 });
 
 After(async function (this: CustomWorld, scenario) {
-    await this.page.screenshot({path: `${scenario.pickle.name}.png`, fullPage: true})
+    await this.page.screenshot({ path: `${scenario.pickle.name}.png`, fullPage: true })
     await this.browser.close();
 });

@@ -10,7 +10,7 @@ Then('verify activity details page is displayed', async function (this: CustomWo
     expect(await this.activityDetailsPage.isActivityDetailsPageDisplayed()).toBeTruthy();
 });
 
-When('user selects the {string}, {string} and click on book now button', async function (this:CustomWorld, date, count) {
+When('user selects the {string}, {string} and click on book now button', async function (this: CustomWorld, date, count) {
     await this.activityDetailsPage.selectDate(date);
     await this.activityDetailsPage.addTravelers(count);
     await this.activityDetailsPage.clickOnBookNowBtn();
